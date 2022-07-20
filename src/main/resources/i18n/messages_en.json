@@ -409,6 +409,7 @@
       "loadingIncludedSourcecodes": "Loading Included Sourcecodes",
       "expressionResolveError": "Error occurred during resolving expression!",
       "forbiddenError": "You are not authorized to view the concept set expression.",
+      "descriptionPlaceholder": "Enter the concept set description here",
       "import": {
         "repository": {
           "overwriteCheckboxLabel": "Overwrite concept set items (append if not checked)"
@@ -1833,7 +1834,8 @@
           "stratifiedByPlaceholder": "Stratified by",
           "subgroupOnly": "Calculate subgroup analyses only",
           "title": "Subgroup analyses"
-        }
+        },
+        "descriptionPlaceholder": "Enter the characterization description here"
       },
       "executions": {
         "title": "Executions",
@@ -1986,7 +1988,8 @@
       "timeAtRiskPlus": "plus",
       "timeAtRiskStartDate": "start date",
       "timeAtRiskStartsWith": "Time at risk starts with",
-      "timeAtRiskWarningMessage": "Error: Time at risk starts on or after time at risk end, resulting in zero time at risk.  Please ensure the start offset is greater than the end offset."
+      "timeAtRiskWarningMessage": "Error: Time at risk starts on or after time at risk end, resulting in zero time at risk.  Please ensure the start offset is greater than the end offset.",
+      "descriptionPlaceholder": "Enter the analysis description here"
     },
     "nameConflict": "An incidence rate with this name already exists. Please choose a different name.",
     "newanalysis": "New Analysis",
@@ -2089,7 +2092,8 @@
         "targetCohorts": {
           "description": "Each of the Target Cohorts will be analyized for the pathways through the event cohorts.",
           "title": "Target Cohorts"
-        }
+        },
+        "descriptionPlaceholder": "Enter the cohort pathway description here"
       },
       "executions": {
         "title": "Executions",

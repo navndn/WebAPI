@@ -409,6 +409,7 @@
       "loadingIncludedSourcecodes": "加载包含的源代码",
       "expressionResolveError": "Error occurred during resolving expression!",
       "forbiddenError": "You are not authorized to view the concept set expression.",
+      "descriptionPlaceholder": "Enter the concept set description here",
       "import": {
         "repository": {
           "overwriteCheckboxLabel": "Overwrite concept set items (append if not checked)"
@@ -1833,7 +1834,8 @@
           "stratifiedByPlaceholder": "分层",
           "subgroupOnly": "仅计算亚组分析。",
           "title": "亚组分析"
-        }
+        },
+        "descriptionPlaceholder": "Enter the characterization description here"
       },
       "executions": {
         "title": "执行",
@@ -1986,7 +1988,8 @@
       "timeAtRiskPlus": "添加",
       "timeAtRiskStartDate": "开始日期",
       "timeAtRiskStartsWith": "风险时间窗从",
-      "timeAtRiskWarningMessage": "错误：风险时间在风险时间结束时或之后开始，导致风险时间为零。 请确保起始偏移量大于结束偏移量。"
+      "timeAtRiskWarningMessage": "错误：风险时间在风险时间结束时或之后开始，导致风险时间为零。 请确保起始偏移量大于结束偏移量。",
+      "descriptionPlaceholder": "Enter the analysis description here"
     },
     "nameConflict": "使用该名称的发病率已经存在。 请选择其他名称。",
     "newanalysis": "新建分析",
@@ -2089,7 +2092,8 @@
         "targetCohorts": {
           "description": "对于每个目标队列分析事件队列的途径",
           "title": "目标队列"
-        }
+        },
+        "descriptionPlaceholder": "Enter the cohort pathway description here"
       },
       "executions": {
         "title": "执行",

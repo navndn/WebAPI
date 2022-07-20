@@ -360,6 +360,7 @@
       "loadingIncludedSourcecodes": "포함된 소스 코드 로딩 중",
       "expressionResolveError": "Error occurred during resolving expression!",
       "forbiddenError": "You are not authorized to view the concept set expression.",
+      "descriptionPlaceholder": "Enter the concept set description here",
       "import": {
         "repository": {
           "overwriteCheckboxLabel": "Overwrite concept set items (append if not checked)"
@@ -1833,7 +1834,8 @@
           "stratifiedByPlaceholder": "층화(Stratified)된",
           "subgroupOnly": "서브 그룹 분석만 계산합니다.",
           "title": "서브 그룹 분석"
-        }
+        },
+        "descriptionPlaceholder": "Enter the characterization description here"
       },
       "executions": {
         "title": "실행",
@@ -1986,7 +1988,8 @@
       "timeAtRiskPlus": "에",
       "timeAtRiskStartDate": "시작일",
       "timeAtRiskStartsWith": "위험 노출 기간은",
-      "timeAtRiskWarningMessage": "오류 : 위험 측정 기간 (Time At Risk)이 위험 측정 기간 종료 시점 또는 그 이후에 시작되어 위험 측정기간이 0이됩니다. 시작 오프셋이 끝 오프셋보다 큰지 확인하십시오."
+      "timeAtRiskWarningMessage": "오류 : 위험 측정 기간 (Time At Risk)이 위험 측정 기간 종료 시점 또는 그 이후에 시작되어 위험 측정기간이 0이됩니다. 시작 오프셋이 끝 오프셋보다 큰지 확인하십시오.",
+      "descriptionPlaceholder": "Enter the analysis description here"
     },
     "nameConflict": "이 이름의 발생률(incidence rate)이 이미 존재합니다. 다른 이름을 선택하십시오.",
     "newanalysis": "새 분석",
@@ -2089,7 +2092,8 @@
         "targetCohorts": {
           "description": "각각의 표적코호트는 이벤트 코호트를 통한 경로들로 분석됩니다.",
           "title": "표적 코호트"
-        }
+        },
+        "descriptionPlaceholder": "Enter the cohort pathway description here"
       },
       "executions": {
         "title": "실행",
