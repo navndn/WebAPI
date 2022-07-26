@@ -49,6 +49,9 @@ public class RoleEntity implements Serializable{
 
   @Column(name = "system_role")
   private Boolean systemRole;
+
+  @Column(name = "ui_visible")
+  private Boolean uiVisible;
   
   public Long getId() {
     return id;
@@ -88,5 +91,13 @@ public class RoleEntity implements Serializable{
 
   public void setSystemRole(Boolean system) {
     systemRole = system;
+  }
+
+  public Boolean isUiVisible() {
+    return uiVisible;
+  }
+
+  public void setUiVisible(Boolean uiVisible) {
+    this.uiVisible = uiVisible;
   }
 }

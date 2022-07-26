@@ -132,7 +132,9 @@ public class UserService {
   @Path("user/{userId}/roles")
   @Produces(MediaType.APPLICATION_JSON)
   public ArrayList<Role> getUserRoles(@PathParam("userId") Long userId) throws Exception {
-    Set<RoleEntity> roleEntities = this.authorizer.getUserRoles(userId);
+    Set<RoleEntity> roleEntities = this.authorizer.getUserRoles(userId).stream()
+            .filter(RoleEntity::isUiVisible)
+            .collect(Collectors.toSet());
     ArrayList<Role> roles = convertRoles(roleEntities);
     Collections.sort(roles);
     return roles;
@@ -174,7 +176,11 @@ public class UserService {
   @Produces(MediaType.APPLICATION_JSON)
   public ArrayList<Role> getRoles(
           @DefaultValue("false") @QueryParam("include_personal") boolean includePersonalRoles) {
-    Iterable<RoleEntity> roleEntities = this.authorizer.getRoles(includePersonalRoles);
+    Set<RoleEntity> roleEntities = StreamSupport.stream(
+            this.authorizer.getRoles(includePersonalRoles).spliterator(), false)
+            .filter(RoleEntity::isUiVisible)
+            .collect(Collectors.toSet());
+
     ArrayList<Role> roles = convertRoles(roleEntities);
     return roles;
   }

@@ -21,6 +21,7 @@ import org.ohdsi.webapi.shiro.Entities.UserRepository;
 import org.ohdsi.webapi.shiro.Entities.UserRoleEntity;
 import org.ohdsi.webapi.shiro.Entities.UserRoleRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Propagation;
@@ -57,6 +58,11 @@ public class PermissionManager {
 
   @Autowired
   private ApplicationEventPublisher eventPublisher;
+
+  @Value("${cdm.visible:false}")
+  private boolean isCdmVisible;
+
+  private static final String CDM_VIEWER_ROLE_NAME = "cdm viewer";
 
   private ThreadLocal<ConcurrentHashMap<String, UserSimpleAuthorizationInfo>> authorizationInfoCache = ThreadLocal.withInitial(ConcurrentHashMap::new);
 
@@ -317,6 +323,12 @@ public class PermissionManager {
       if (isRelationAllowed(userRole.getStatus())) {
         RoleEntity role = userRole.getRole();
         roles.add(role);
+      }
+    }
+    if (isCdmVisible) {
+      RoleEntity cdmViewerRole = roleRepository.findByNameAndSystemRole(CDM_VIEWER_ROLE_NAME, true);
+      if (cdmViewerRole != null) {
+        roles.add(cdmViewerRole);
       }
     }
 
