@@ -50,8 +50,8 @@ public class RoleEntity implements Serializable{
   @Column(name = "system_role")
   private Boolean systemRole;
 
-  @Column(name = "ui_visible")
-  private Boolean uiVisible;
+  @Column(name = "show_on_ui")
+  private Boolean showOnUi;
   
   public Long getId() {
     return id;
@@ -93,11 +93,11 @@ public class RoleEntity implements Serializable{
     systemRole = system;
   }
 
-  public Boolean isUiVisible() {
-    return uiVisible;
+  public Boolean getShowOnUi() {
+    return showOnUi;
   }
 
-  public void setUiVisible(Boolean uiVisible) {
-    this.uiVisible = uiVisible;
+  public void setShowOnUi(Boolean showOnUi) {
+    this.showOnUi = showOnUi;
   }
 }
