@@ -1476,6 +1476,7 @@
     "dpcTooltip": "Descendant Person Count"
   },
   "dataSources": {
+    "closeAndScrollToReport": "Loading done. Click here to scroll down to the report.",
     "const": {
       "lengthOfEra": "周期的长短",
       "recordsPerPerson": "每人记录"

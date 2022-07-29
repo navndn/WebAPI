@@ -1476,6 +1476,7 @@
     "dpcTooltip": "Descendant Person Count"
   },
   "dataSources": {
+    "closeAndScrollToReport": "Loading done. Click here to scroll down to the report.",
     "const": {
       "lengthOfEra": "기간의 길이",
       "recordsPerPerson": "사람 당 기록수"

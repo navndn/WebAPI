@@ -1610,7 +1610,8 @@
       "percentOfPopulation": "Процент населения",
       "years": "Годы",
       "date": "Дата"
-    }
+    },
+    "closeAndScrollToReport": "Загрузка завершена. Нажмите здесь, чтобы посмотреть отчет."
   },
   "search": {
     "headingTitle": "Поиск",
