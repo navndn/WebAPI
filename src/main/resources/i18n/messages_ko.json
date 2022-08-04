@@ -60,7 +60,9 @@
   "common": {
     "accessDenied": "접근 불가",
     "add": "더하기",
+    "all": "모두",
     "and": "그리고",
+    "any": "어느 하나",
     "anonymous": "anonymous",
     "cancel": "취소",
     "close": "닫기",
@@ -2757,9 +2759,17 @@
       "inclusionReport": "포함 보고서",
       "inclusionReportFor": " ",
       "inclusionReportFor1": "에 대한 포함 조건 레포트",
+      "having": "Having",
+      "ofSelectedCriteria": "of selected criteria",
+      "passed": "passed",
+      "failed": "failed",
+      "summary": "Summary:",
+      "summaryText": "<%=events%> events (<%=percentage%>%)",
       "tabs": {
         "byEvents": "이벤트에 따라",
-        "byPerson": "사람에 따라"
+        "byPerson": "사람에 따라",
+        "byEventsSubtitle": "using all events",
+        "byPersonSubtitle": "using 1 event per person"
       }
     },
     "costUtilization": {

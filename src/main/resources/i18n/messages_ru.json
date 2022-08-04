@@ -107,7 +107,9 @@
     "saveAsCurrentVersion": "Сохранить как текущую версию",
     "unsavedWarning": "Несохраненные изменения будут потеряны. Продолжить?",
     "savePreviewWarning": "Сохранить как текущую версию?",
-    "anonymous": "аноним"
+    "anonymous": "аноним",
+    "all": "все",
+    "any": "любой"
   },
   "commonErrors": {
     "browserWarning": "Пожалуйста, обратите внимание, что официально поддерживается только браузер Chrome версии не ниже v.63",
@@ -2757,9 +2759,17 @@
       "inclusionReport": "Отчет о включении",
       "inclusionReportFor": "Отчет о включении для",
       "inclusionReportFor1": " ",
+      "having": "Если",
+      "ofSelectedCriteria": "из выбранных критериев",
+      "passed": "прошел",
+      "failed": "не прошел",
+      "summary": "Всего:",
+      "summaryText": "<%=events%> событий (<%=percentage%>%)",
       "tabs": {
-        "byEvents": "По событиям",
-        "byPerson": "По человеку"
+        "byEvents": "По всем событиям",
+        "byPerson": "По 1 событию на человека",
+        "byEventsSubtitle": "по всем событиям",
+        "byPersonSubtitle": "по 1 событию на человека"
       }
     },
     "costUtilization": {
