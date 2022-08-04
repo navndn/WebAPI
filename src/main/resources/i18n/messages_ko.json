@@ -2773,7 +2773,7 @@
         "byEvents": "이벤트에 따라",
         "byPerson": "사람에 따라",
         "byEventsSubtitle": "using all events",
-        "byPersonSubtitle": "using 1 event per person"
+        "byPersonSubtitle": "by person"
       }
     },
     "costUtilization": {

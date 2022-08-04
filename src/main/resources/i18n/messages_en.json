@@ -2771,9 +2771,9 @@
       "summaryText": "<%=events%> events (<%=percentage%>%)",
       "tabs": {
         "byEvents": "By All Events",
-        "byPerson": "By 1 Event Per Person",
+        "byPerson": "By Person",
         "byEventsSubtitle": "using all events",
-        "byPersonSubtitle": "using 1 event per person"
+        "byPersonSubtitle": "by person"
       }
     },
     "costUtilization": {
