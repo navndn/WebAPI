@@ -2769,7 +2769,7 @@
         "byEvents": "根据事件",
         "byPerson": "根据人",
         "byEventsSubtitle": "using all events",
-        "byPersonSubtitle": "using 1 event per person"
+        "byPersonSubtitle": "by person"
       }
     },
     "costUtilization": {
