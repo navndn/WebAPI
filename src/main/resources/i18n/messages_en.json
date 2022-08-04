@@ -60,7 +60,9 @@
   "common": {
     "accessDenied": "Access denied",
     "add": "Add",
+    "all": "all",
     "and": "and",
+    "any": "any",
     "anonymous": "anonymous",
     "cancel": "Cancel",
     "close": "Close",
@@ -931,7 +933,7 @@
       "percentSatisfied": "% Satisfied",
       "percentToGain": "% To-Gain",
       "populationVisualization": "Population Visualization",
-      "rectSummary": "<%=size%> people (<%=percentage%>%), <%=passCount%> criteria passed, <%=failCount%> criteria failed."
+      "rectSummary": "<%=size%> events (<%=percentage%>%), <%=passCount%> criteria passed, <%=failCount%> criteria failed."
     },
     "feasibilityReportViewer": {
       "feasibilityReportViewerText_1": "Match Rate",
@@ -2761,9 +2763,17 @@
       "inclusionReport": "Inclusion Report",
       "inclusionReportFor": "Inclusion Report for",
       "inclusionReportFor1": " ",
+      "having": "Having",
+      "ofSelectedCriteria": "of selected criteria",
+      "passed": "passed",
+      "failed": "failed",
+      "summary": "Summary:",
+      "summaryText": "<%=events%> events (<%=percentage%>%)",
       "tabs": {
-        "byEvents": "By Events",
-        "byPerson": "By Person"
+        "byEvents": "By All Events",
+        "byPerson": "By 1 Event Per Person",
+        "byEventsSubtitle": "using all events",
+        "byPersonSubtitle": "using 1 event per person"
       }
     },
     "costUtilization": {

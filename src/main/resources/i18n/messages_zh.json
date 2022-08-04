@@ -60,7 +60,9 @@
   "common": {
     "accessDenied": "拒绝访问",
     "add": "添加",
+    "all": "全部",
     "and": "以及",
+    "any": "任意一个",
     "anonymous": "anonymous",
     "cancel": "取消",
     "close": "关闭",
@@ -2761,9 +2763,17 @@
       "inclusionReport": "纳入条件报告",
       "inclusionReportFor": " ",
       "inclusionReportFor1": "的纳入条件报告",
+      "having": "Having",
+      "ofSelectedCriteria": "of selected criteria",
+      "passed": "passed",
+      "failed": "failed",
+      "summary": "Summary:",
+      "summaryText": "<%=events%> events (<%=percentage%>%)",
       "tabs": {
         "byEvents": "根据事件",
-        "byPerson": "根据人"
+        "byPerson": "根据人",
+        "byEventsSubtitle": "using all events",
+        "byPersonSubtitle": "using 1 event per person"
       }
     },
     "costUtilization": {
