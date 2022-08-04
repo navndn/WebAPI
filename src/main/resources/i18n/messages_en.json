@@ -98,6 +98,7 @@
     "refresh": "Refresh",
     "save": "Save",
     "search": "Search",
+    "select": "Select",
     "selectAll": "Select All",
     "set": "Set",
     "unsaved": "(unsaved)",
@@ -131,7 +132,8 @@
     "pathways": "Cohort Pathways",
     "prediction": "Prediction",
     "profiles": "Profiles",
-    "search": "Search"
+    "search": "Search",
+    "tagging": "Tagging"
   },
   "options": {
     "after": "After",
@@ -1187,6 +1189,14 @@
       "viewing": "Viewing now",
       "createACopy": "Create a copy",
       "current": "Current"
+    },
+    "heading": {
+      "tag": {
+        "tooltip":  {
+          "group": "Group:",
+          "tag": "Tag:"
+        }
+      }
     }
   },
   "facets": {
@@ -2360,6 +2370,21 @@
       "tabs": {
         "design": "Design",
         "versions": "Versions"
+      }
+    }
+  },
+  "tagging": {
+    "tabs": {
+      "multiAssign": "Multi-assign"
+    },
+    "multiAssign": {
+      "tabs": {
+        "conceptsets": "Consept Sets",
+        "cohorts": "Cohorts",
+        "characterizations": "Characterizations",
+        "incidenceRates": "Incidence Rates",
+        "cohortPathways": "Cohort Pathways",
+        "reusables": "Reusables"
       }
     }
   },

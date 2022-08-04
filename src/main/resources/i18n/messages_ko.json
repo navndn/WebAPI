@@ -98,6 +98,7 @@
     "refresh": "새로고침",
     "save": "저장",
     "search": "검색",
+    "select": "선택",
     "selectAll": "모두 선택",
     "set": "세트",
     "unsaved": "(저장되지 않음)",
@@ -131,7 +132,8 @@
     "pathways": "코호트 경로",
     "prediction": "예측",
     "profiles": "프로필",
-    "search": "검색"
+    "search": "검색",
+    "tagging": "Tagging"
   },
   "options": {
     "after": "다음",
@@ -1187,6 +1189,14 @@
       "viewing": "Viewing now",
       "createACopy": "Create a copy",
       "current": "Current"
+    },
+    "heading": {
+      "tag": {
+        "tooltip": {
+          "group": "Group:",
+          "tag": "Tag:"
+        }
+      }
     }
   },
   "facets": {
@@ -2360,6 +2370,21 @@
       "tabs": {
         "design": "Design",
         "versions": "Versions"
+      }
+    }
+  },
+  "tagging": {
+    "tabs": {
+      "multiAssign": "Multi-assign"
+    },
+    "multiAssign": {
+      "tabs": {
+        "conceptsets": "Consept Sets",
+        "cohorts": "Cohorts",
+        "characterizations": "Characterizations",
+        "incidenceRates": "Incidence Rates",
+        "cohortPathways": "Cohort Pathways",
+        "reusables": "Reusables"
       }
     }
   },
