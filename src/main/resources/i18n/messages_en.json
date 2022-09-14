@@ -2421,7 +2421,7 @@
       "error": "Error!",
       "forbiddenError": "Forbidden!",
       "tabs": {
-        "conceptsets": "Consept Sets",
+        "conceptsets": "Concept Sets",
         "cohorts": "Cohorts",
         "characterizations": "Characterizations",
         "incidenceRates": "Incidence Rates",
