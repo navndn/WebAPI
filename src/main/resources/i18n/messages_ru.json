@@ -1222,6 +1222,11 @@
       "createACopy": "Создать копию",
       "current": "Текущая"
     },
+    "reusablesModal": {
+      "title": "Вставить из сниппета",
+      "loadingReusables": "Загрузка списка сниппетов...",
+      "anyConceptSet": "Любой набор концепций"
+    },
     "heading": {
       "tag": {
         "tooltip": {
