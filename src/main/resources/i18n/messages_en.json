@@ -1232,6 +1232,9 @@
           "tag": "Tag:"
         }
       }
+    },
+    "report": {
+
     }
   },
   "facets": {
@@ -1585,6 +1588,7 @@
       "measurementRecordsByUnit": "Measurement Records by Unit",
       "measurementValueDistribution": "Measurement Value Distribution",
       "noData": "No data",
+      "reportNoData": "No data to display this report",
       "operatorConcept": "Operator Concept",
       "prevalence": "Prevalence",
       "prevalenceByMonth": "Prevalence by Month",

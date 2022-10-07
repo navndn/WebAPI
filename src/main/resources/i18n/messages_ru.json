@@ -1614,6 +1614,7 @@
     "loadingDrilldownReport": "Загрузка развернутого отчета",
     "drilldown": {
       "noData": "Нет данных",
+      "reportNoData": "Нет данных для отображения отчета",
       "drilldownReport": ". Развернутый отчет",
       "prevalence": "Распространенность",
       "lowerLimitDistribution": "Распределение по нижней границе",

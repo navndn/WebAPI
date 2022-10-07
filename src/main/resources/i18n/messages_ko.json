@@ -1585,6 +1585,7 @@
       "measurementRecordsByUnit": "단위",
       "measurementValueDistribution": "측정 값 분포",
       "noData": "데이터 없음",
+      "reportNoData": "No data to display this report",
       "operatorConcept": "연산자 컨셉",
       "prevalence": "유병율",
       "prevalenceByMonth": "월별 유병율",

@@ -1585,6 +1585,7 @@
       "measurementRecordsByUnit": "单位检查检验记录",
       "measurementValueDistribution": "检查检验值分布",
       "noData": "没有数据",
+      "reportNoData": "No data to display this report",
       "operatorConcept": "手术操作概念",
       "prevalence": "患病率",
       "prevalenceByMonth": "每月患病率",
