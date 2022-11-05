@@ -1286,8 +1286,8 @@
     },
     "match": {
       "both": "Both",
-      "only1": "1 Only",
-      "only2": "2 Only"
+      "only1": "CS1 Only",
+      "only2": "CS2 Only"
     },
     "type": {
       "preset": "Preset",
