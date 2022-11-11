@@ -1202,6 +1202,7 @@
       "notPermitted": "Not permitted",
       "assignExistingTag": "Create custom tag",
       "tagNamePlaceholder": "Tag name",
+      "tagNameError": "Please, enter correct custom tag name. The custom tag name can contain letters, numbers and the special characters: _-",
       "assignedTags": "Assigned tags:",
       "tagGroups": "Tag groups:",
       "tagGroup:": "Tag group:",
