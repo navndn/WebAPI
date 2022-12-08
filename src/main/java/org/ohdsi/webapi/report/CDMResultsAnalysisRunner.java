@@ -4,7 +4,6 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ArrayNode;
 import com.fasterxml.jackson.databind.node.ObjectNode;
-import com.google.common.base.Joiner;
 import org.ohdsi.webapi.report.mapper.*;
 import org.ohdsi.webapi.source.Source;
 import org.ohdsi.webapi.source.SourceDaimon;
@@ -30,8 +29,7 @@ public class CDMResultsAnalysisRunner {
 
     private static final String[] STANDARD_TABLE = new String[]{"results_database_schema", "vocab_database_schema", "cdm_database_schema"};
 
-    private static final String[] DRILLDOWN_SINGLE_CONCEPT_COLUMN = new String[]{"conceptId"};
-    private static final String DRILLDOWN_MULTIPLE_CONCEPT_COLUMN = "conceptIds";
+    private static final String[] DRILLDOWN_COLUMNS = new String[]{"conceptId"};
     private static final String[] DRILLDOWN_TABLE = new String[]{"results_database_schema", "vocab_database_schema"};
 
     private String sourceDialect;
@@ -264,20 +262,21 @@ public class CDMResultsAnalysisRunner {
 
     public JsonNode getDrilldown(JdbcTemplate jdbcTemplate,
                                  String domain,
-                                 List<Integer> conceptIds,
+                                 Integer conceptId,
                                  Source source) {
         ObjectNode objectNode = objectMapper.createObjectNode();
 
         ClassLoader cl = this.getClass().getClassLoader();
         ResourcePatternResolver resolver = new PathMatchingResourcePatternResolver(cl);
-        String pattern = BASE_SQL_PATH + "/report/" + domain.toLowerCase() + getSqlFolder(conceptIds) + "*.sql";
+        String folder = Objects.nonNull(conceptId) ? "/drilldown/" : "/drilldownsummary/";
+        String pattern = BASE_SQL_PATH + "/report/" + domain.toLowerCase() + folder + "*.sql";
         try {
             Resource[] resources = resolver.getResources(pattern);
             for (Resource resource : resources) {
                 String fullSqlPath = resource.getURL().getPath();
                 int startIndex = fullSqlPath.indexOf(BASE_SQL_PATH);
                 String sqlPath = fullSqlPath.substring(startIndex);
-                PreparedStatementRenderer sql = this.renderTranslateSql(sqlPath, conceptIds, source);
+                PreparedStatementRenderer sql = this.renderTranslateSql(sqlPath, conceptId, source);
                 if (sql != null) {
                     List<JsonNode> l = jdbcTemplate.query(sql.getSql(), sql.getSetter(), new GenericRowMapper(objectMapper));
                     String analysisName = resource.getFilename().replace(".sql", "");
@@ -290,15 +289,7 @@ public class CDMResultsAnalysisRunner {
         return objectNode;
     }
 
-    private String getSqlFolder(List<Integer> conceptIds) {
-        if (conceptIds != null) {
-            return conceptIds.size() == 1 ? "/drilldown/" : "/drilldownmultiple/";
-        } else {
-            return "/drilldownsummary/";
-        }
-    }
-
-    private PreparedStatementRenderer renderTranslateSql(String sqlPath, List<Integer> conceptIds, Source source) {
+    private PreparedStatementRenderer renderTranslateSql(String sqlPath, Integer conceptId, Source source) {
 
         String resultsTableQualifier = source.getTableQualifier(SourceDaimon.DaimonType.Results);
         String vocabularyTableQualifier = source.getTableQualifier(SourceDaimon.DaimonType.Vocabulary);
@@ -307,15 +298,9 @@ public class CDMResultsAnalysisRunner {
         PreparedStatementRenderer psr;
         String[] tableQualifierValues;
 
-        if (conceptIds != null) {
+        if (conceptId != null) {
             tableQualifierValues = new String[]{resultsTableQualifier, vocabularyTableQualifier};
-            if (conceptIds.size() == 1) {
-                psr = new PreparedStatementRenderer(source, sqlPath, DRILLDOWN_TABLE, tableQualifierValues,
-                        DRILLDOWN_SINGLE_CONCEPT_COLUMN, new Integer[]{conceptIds.get(0)});
-            } else {
-                psr = new PreparedStatementRenderer(source, sqlPath, DRILLDOWN_TABLE, tableQualifierValues,
-                        DRILLDOWN_MULTIPLE_CONCEPT_COLUMN, conceptIds.toArray(new Integer[0]));
-            }
+            psr = new PreparedStatementRenderer(source, sqlPath, DRILLDOWN_TABLE, tableQualifierValues, DRILLDOWN_COLUMNS,  new Integer[]{conceptId});
         } else {
             tableQualifierValues = new String[]{resultsTableQualifier, vocabularyTableQualifier, cdmTableQualifier};
             psr = new PreparedStatementRenderer(source, sqlPath, STANDARD_TABLE, tableQualifierValues, (String) null, null);
