@@ -29,9 +29,11 @@ SELECT
     concept_id descendant_id
 FROM @vocab_schema.concept c
 ), counts AS (
-SELECT cast(stratum_1 as bigint) concept_id, MAX (count_value) agg_count_value
+SELECT case WHEN analysis_id in (2, 4, 5, 201, 225, 301, 325, 401, 425, 501, 505, 525, 601, 625, 701, 725, 801, 825,
+    826, 827, 901, 1001, 1201, 1203, 1425, 1801, 1825, 1826, 1827, 2101, 2125, 2301)
+    THEN cast(stratum_1 as bigint) ELSE cast(null as bigint) END as concept_id, MAX (count_value) agg_count_value
 FROM @results_schema.achilles_results
-WHERE stratum_1 <> '' and analysis_id IN (2, 4, 5, 201, 225, 301, 325, 401, 425, 501, 505, 525, 601, 625, 701, 725, 801, 825,
+WHERE analysis_id IN (2, 4, 5, 201, 225, 301, 325, 401, 425, 501, 505, 525, 601, 625, 701, 725, 801, 825,
     826, 827, 901, 1001, 1201, 1203, 1425, 1801, 1825, 1826, 1827, 2101, 2125, 2301)
     /* analyses:
           Number of persons by gender
@@ -67,11 +69,12 @@ WHERE stratum_1 <> '' and analysis_id IN (2, 4, 5, 201, 225, 301, 325, 401, 425,
          Number of device_exposure records, by device_source_concept_id
          Number of location records, by region_concept_id
     */
-GROUP BY stratum_1
+GROUP BY stratum_1, analysis_id
 UNION
-SELECT cast(stratum_2 as bigint) AS concept_id, SUM (count_value) AS agg_count_value
+SELECT case WHEN analysis_id in (405, 605, 705, 805, 807, 1805, 1807, 2105)
+    THEN cast(stratum_2 as bigint) ELSE cast(null as bigint) END as concept_id, MAX (count_value) agg_count_value
 FROM @results_schema.achilles_results
-WHERE stratum_2 <> '' and analysis_id IN (405, 605, 705, 805, 807, 1805, 1807, 2105)
+WHERE analysis_id IN (405, 605, 705, 805, 807, 1805, 1807, 2105)
     /* analyses:
          Number of condition occurrence records, by condition_concept_id by condition_type_concept_id
          Number of procedure occurrence records, by procedure_concept_id by procedure_type_concept_id
@@ -83,11 +86,12 @@ WHERE stratum_2 <> '' and analysis_id IN (405, 605, 705, 805, 807, 1805, 1807, 2
          Number of device exposure records, by device_concept_id by device_type_concept_id
         but this subquery only gets the type or unit concept_ids, i.e., stratum_2
     */
-GROUP BY stratum_2
+GROUP BY stratum_2, analysis_id
     ), counts_person AS (
-SELECT cast(stratum_1 as bigint) concept_id, MAX (count_value) agg_count_value
+SELECT case WHEN analysis_id in (200, 400, 600, 700, 800, 900, 1000, 1300, 1800, 2100, 2200)
+    THEN cast(stratum_1 as bigint) ELSE cast(null as bigint) END as concept_id, MAX (count_value) agg_count_value
 FROM @results_schema.achilles_results
-WHERE stratum_1 <> '' and analysis_id IN (200, 400, 600, 700, 800, 900, 1000, 1300, 1800, 2100, 2200)
+WHERE analysis_id IN (200, 400, 600, 700, 800, 900, 1000, 1300, 1800, 2100, 2200)
     /* analyses:
         Number of persons with at least one visit occurrence, by visit_concept_id
         Number of persons with at least one condition occurrence, by condition_concept_id
@@ -101,7 +105,7 @@ WHERE stratum_1 <> '' and analysis_id IN (200, 400, 600, 700, 800, 900, 1000, 13
         Number of persons with at least one device exposure, by device_concept_id
         Number of persons with at least one note by  note_type_concept_id
     */
-GROUP BY stratum_1)
+GROUP BY stratum_1, analysis_id)
 
 INSERT INTO @results_schema.achilles_result_concept_count (concept_id, record_count, descendant_record_count, person_count, descendant_person_count)
 SELECT
