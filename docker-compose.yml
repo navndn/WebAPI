@@ -1,0 +1,10 @@
+version: '3'
+services:
+  wellowebapi:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        # MAVEN_PROFILE: webapi-postresql
+        MAVEN_PROFILE: webapi-postgresql,webapi-bigquery
+        # MAVEN_PROFILE: webapi-bigquery
