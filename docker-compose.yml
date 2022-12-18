@@ -8,3 +8,5 @@ services:
         # MAVEN_PROFILE: webapi-postresql
         MAVEN_PROFILE: webapi-postgresql,webapi-bigquery
         # MAVEN_PROFILE: webapi-bigquery
+        GIT_BRANCH: master-2.12-bq
+        GIT_COMMIT_ID_ABBREV: abcdef
