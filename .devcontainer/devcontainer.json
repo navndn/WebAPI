@@ -99,7 +99,7 @@
 			"installJupyterlab": true
 		},
 		"ghcr.io/devcontainers/features/java": {
-			"version": "11",
+			"version": "8",
 			"installMaven": true,
 			// "mavenVersion": "3.8.1",
 			"installGradle": true,

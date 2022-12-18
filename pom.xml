@@ -361,6 +361,7 @@
         <configuration>
           <generateGitPropertiesFile>false</generateGitPropertiesFile>
           <failOnNoGitDirectory>false</failOnNoGitDirectory>
+          <failOnUnableToExtractRepoInfo>false</failOnUnableToExtractRepoInfo>
           <!-- only include properties to speed up plugin -->
           <!-- ref: https://github.com/git-commit-id/git-commit-id-maven-plugin/issues/462 -->
           <includeOnlyProperties>
