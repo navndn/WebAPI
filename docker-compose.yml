@@ -1,6 +1,7 @@
 version: '3'
 services:
   wellowebapi:
+    image: wellowebapi:2.12-bq
     build:
       context: .
       dockerfile: Dockerfile

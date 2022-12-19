@@ -1,4 +1,5 @@
-FROM --platform=amd64 maven:3.6-jdk-8 as builder
+# FROM --platform=amd64 maven:3.6-jdk-8 as builder
+FROM maven:3.8-jdk-8 as builder
 
 WORKDIR /code
 
@@ -29,6 +30,7 @@ RUN mvn package \
     && rm WebAPI.war
 
 # OHDSI WebAPI and ATLAS web application running as a Spring Boot application with Java 11
+# FROM --platform=amd64 openjdk:8-jre-slim
 FROM openjdk:8-jre-slim
 
 MAINTAINER Lee Evans - www.ltscomputingllc.com
