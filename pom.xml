@@ -1496,7 +1496,9 @@
       <properties>
         <bigquery.enabled>true</bigquery.enabled>
         <!-- BigQuery JDBC driver path -->
-        <bigquery.classpath>${basedir}/src/main/extras/bigquery</bigquery.classpath>
+        <bigquery.classpath>${basedir}/drivers-1.2.19.1023</bigquery.classpath>
+        <!-- <bigquery.classpath>${basedir}/drivers</bigquery.classpath> -->
+        <!-- <bigquery.classpath>${basedir}/src/main/extras/bigquery</bigquery.classpath> -->
       </properties>
       <dependencies>
         <dependency>
@@ -1572,7 +1574,7 @@
             <artifactId>maven-install-plugin</artifactId>
             <version>2.5.2</version>
             <executions>
-              <!-- <execution>
+              <execution>
                 <id>google-api-client</id>
                 <phase>initialize</phase>
                 <goals>
@@ -1585,8 +1587,8 @@
                   <packaging>jar</packaging>
                   <file>${bigquery.classpath}/google-api-client-1.31.4.jar</file>
                 </configuration>
-              </execution> -->
-              <!-- <execution>
+              </execution>
+              <execution>
                 <id>google-api-services-bigquery</id>
                 <phase>initialize</phase>
                 <goals>
@@ -1599,7 +1601,7 @@
                   <packaging>jar</packaging>
                   <file>${bigquery.classpath}/google-api-services-bigquery-v2-rev20210410-1.31.0.jar</file>
                 </configuration>
-              </execution> -->
+              </execution>
               <execution>
                 <id>google-cloud-bigquery</id>
                 <phase>initialize</phase>
@@ -1614,7 +1616,7 @@
                   <file>${bigquery.classpath}/GoogleBigQueryJDBC42.jar</file>
                 </configuration>
               </execution>
-              <!-- <execution>
+              <execution>
                 <id>google-http-client</id>
                 <phase>initialize</phase>
                 <goals>
@@ -1627,8 +1629,8 @@
                   <packaging>jar</packaging>
                   <file>${bigquery.classpath}/google-http-client-1.39.2.jar</file>
                 </configuration>
-              </execution> -->
-              <!-- <execution>
+              </execution>
+              <execution>
                 <id>google-http-client-jackson2</id>
                 <phase>initialize</phase>
                 <goals>
@@ -1641,8 +1643,8 @@
                   <packaging>jar</packaging>
                   <file>${bigquery.classpath}/google-http-client-jackson2-1.39.2.jar</file>
                 </configuration>
-              </execution> -->
-              <!-- <execution>
+              </execution>
+              <execution>
                 <id>google-oauth-client</id>
                 <phase>initialize</phase>
                 <goals>
@@ -1669,7 +1671,7 @@
                   <packaging>jar</packaging>
                   <file>${bigquery.classpath}/google-cloud-bigquerystorage-1.20.2.jar</file>
                 </configuration>
-              </execution> -->
+              </execution>
             </executions>
           </plugin>
         </plugins>

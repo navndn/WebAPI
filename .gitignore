@@ -19,3 +19,8 @@ sandbox/
 **/resources/config/application*-dev-*.yml
 /.vscode
 /.run
+
+
+**/bigquery/drivers
+drivers
+drivers-*

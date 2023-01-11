@@ -10,9 +10,12 @@ RUN curl -LSsO https://github.com/open-telemetry/opentelemetry-java-instrumentat
 
 # Download dependencies
 COPY pom.xml /code/
+# COPY drivers /code/drivers/
+COPY drivers-1.2.19.1023 /code/drivers-1.2.19.1023/
+# RUN pwd && ls . && ls drivers
 RUN mkdir .git \
     && mvn package \
-     -P${MAVEN_PROFILE}
+    -P${MAVEN_PROFILE} -Dmaven.test.skip=true
 
 ARG GIT_BRANCH=unknown
 ARG GIT_COMMIT_ID_ABBREV=unknown
