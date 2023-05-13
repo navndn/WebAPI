@@ -1549,12 +1549,12 @@
         <dependency>
           <groupId>com.google.api</groupId>
           <artifactId>gax</artifactId>
-          <version>1.47.0</version>
+          <version>1.63.0</version>
         </dependency>
         <dependency>
           <groupId>com.google.api</groupId>
           <artifactId>gax-grpc</artifactId>
-          <version>1.47.0</version>
+          <version>1.63.0</version>
         </dependency>
         <dependency>
           <groupId>com.google.api.grpc</groupId>
@@ -1565,6 +1565,12 @@
           <groupId>io.opencensus</groupId>
           <artifactId>opencensus-contrib-http-util</artifactId>
           <version>0.18.0</version>
+        </dependency>
+        <!-- avro-1.10.2.jar -->
+        <dependency>
+          <groupId>org.apache.avro</groupId>
+          <artifactId>avro</artifactId>
+          <version>1.10.2</version>
         </dependency>
       </dependencies>
       <build>
